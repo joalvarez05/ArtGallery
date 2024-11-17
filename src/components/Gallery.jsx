@@ -3,23 +3,13 @@ import { sculptureList } from "../data/data.js";
 import Gallerydetails from "./Gallerydetails.jsx";
 
 function Gallery() {
-  //   console.log(sculptureList);
-
   //! HOOKS - useState y useEffect
   //? useState
   const [index, setIndex] = useState(0);
-  //   console.log(index);
-  //   console.log(sculptureList[index]);
 
   const [show, setShow] = useState(false);
-  console.log(show);
 
   let escultura = sculptureList[index];
-  console.log(escultura);
-
-  useEffect(() => {
-    alert("Bienvenidos a la galeria!");
-  }, []);
 
   return (
     <>
@@ -28,7 +18,7 @@ function Gallery() {
         <button
           onClick={() => setIndex(index - 1)}
           //   disabled={index === 0}
-          disabled={index !== 0 ? false : true}
+          disabled={index === 0 ? true : false}
         >
           Back
         </button>
